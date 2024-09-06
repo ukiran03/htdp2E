@@ -13,7 +13,7 @@
 ; graphical constants
 (define MTSCN (empty-scene WIDTH HEIGHT))
 
-(define ROCKET .)
+(define ROCKET (rectangle 10 20 "solid" "red"))
 (define ROCKET-CENTER-TOP
   (- HEIGHT (/ (image-height ROCKET) 2)))
 

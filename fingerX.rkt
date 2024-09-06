@@ -1,11 +1,5 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname fingerX) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname fingerX) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname fingerX) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-
-
-
 
 (define (string-first str)
   (string-ith str 0))

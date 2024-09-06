@@ -1,5 +1,8 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname virt-cat) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 
+(require 2htdp/image)
+(require 2htdp/universe)
+
 (define CAT1 (overlay/align "center" "center" (text "cat-1" 24 "white") (circle 30 "solid" "indigo")))
 (define CAT2
   (overlay/align "center" "center" (text "cat-2" 24 "white") (circle 30 "solid" "olivedrab")))
