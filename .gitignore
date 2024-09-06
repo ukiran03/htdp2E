@@ -1,0 +1,6 @@
+# Ignore Image files
+images/
+
+# Ignore Resources
+resrc/
+
