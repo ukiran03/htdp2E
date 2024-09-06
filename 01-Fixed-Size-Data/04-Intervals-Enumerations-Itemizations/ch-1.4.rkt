@@ -1,8 +1,6 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname ch-1.4) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 (require 2htdp/image)
 ;;
-;; Exercise 47.
-;; Design a world program that maintains and displays a "happiness gauge."
 
 ;; 4. Intervals, Enumerations, and Itermizations
 
