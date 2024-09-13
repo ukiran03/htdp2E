@@ -46,6 +46,19 @@
     [(< CLOSE y BOTTOM)
      (text "Closing in" FONT-SIZE "orange")]))
 
+;; From the book
+;; (define (render/status y)
+;;   (place-image
+;;     (cond
+;;       [(<= 0 y CLOSE)
+;;        (text "descending" 11 "green")]
+;;       [(and (< CLOSE y) (<= y HEIGHT))
+;;        (text "closing in" 11 "orange")]
+;;       [(> y HEIGHT)
+;;        (text "landed" 11 "red")])
+;;     20 20
+;;     (render y)))
+
 ;; WorldState -> Image (UFO)
 (define (render-ufo pos)
   (place-image UFO (/ WIDTH 2) pos MTSCN))
