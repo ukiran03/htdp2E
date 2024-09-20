@@ -1,8 +1,7 @@
-#lang racket
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname file2) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;; ---------- For
+;; ---------- DrRacket
 
-;; #lang 2htdp/beginner
-;; (require lang/htdp-advanced)
-;; (require htdp/image)
 (require 2htdp/batch-io)
 
 (define (sign x)
