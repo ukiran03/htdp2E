@@ -1,4 +1,6 @@
-#lang racket
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex-47) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;; ---------- For
+;; ---------- DrRacket
 
 (require 2htdp/image)
 (require 2htdp/universe)
@@ -48,5 +50,9 @@
     [(key=? key "down") (H-down ws)]))
 
 (define (gauge-prog ws)
-  (big-bang ws [to-draw render] [on-tick tock] [stop-when just-stop] [on-key change]))
+  (big-bang ws
+            [to-draw render]
+            [on-tick tock]
+            [stop-when just-stop]
+            [on-key change]))
 

@@ -121,5 +121,3 @@
             [to-draw render]
             [on-key edit-v2]))
 ;; (render (make-editor "Claude " "Shannon"))
-
-

@@ -22,4 +22,7 @@
   (modulo (+ VELOCITY ws) (round (+ (image-width WORLD) (/ (image-width CAT1) 2)))))
 
 (define (cat-prog ws)
-  (big-bang ws [to-draw render] [on-tick calc-x]))
+  (big-bang ws [to-draw render] [on-tick calc-x 1]))
+
+(define sstring "hello world")
+(substring sstring 7)
