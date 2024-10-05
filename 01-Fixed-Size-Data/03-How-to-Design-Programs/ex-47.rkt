@@ -7,52 +7,76 @@
 
 (define MAX-HAPPY 100)
 (define MIN-HAPPY 0)
-(define WORLD (empty-scene 120 120))
-(define BAR-WIDTH 20)
-(define BAR-HEIGHT MAX-HAPPY)
-(define GAUGE-WIDTH 22)
-(define GAUGE-HEIGHT (+ MAX-HAPPY 2))
+(define SCORE-DECREASE 0.1)
+(define SCORE-INCREASE 5)               ; adds 1/5 of ws
+(define SCORE-BOOST 3)                  ; adds 1/3 of ws
 
-(define (tock ws)
-  (- ws 0.1))
+(define GAUGE-WIDTH (/ MAX-HAPPY 10))
+(define GAUGE-HEIGHT MAX-HAPPY)         ; On Max Happiness
 
-(define (BAR y)
-  (rectangle BAR-WIDTH y "solid" "red"))
+(define FRAME-WIDTH (+ GAUGE-WIDTH 3))
+(define FRAME-HEIGHT GAUGE-HEIGHT)
+
+(define SCENE-WIDTH (* FRAME-WIDTH 4))
+(define SCENE-HEIGHT (+ FRAME-HEIGHT 1))
+
+(define SCENE
+  (empty-scene SCENE-WIDTH SCENE-HEIGHT))
+(define FRAME
+  (rectangle FRAME-WIDTH FRAME-HEIGHT "outline" "black"))
 
 (define (render ws)
-  (place-image (BAR ws) 60 (- 120 (/ ws 2)) WORLD))
+  (if (> ws MAX-HAPPY)
+      (draw-guage MAX-HAPPY)
+      (draw-guage ws)))
 
-;; wrong----
-(define (render2 ws)
-  (overlay/align/offset "middle"
-                        "bottom"
-                        (rectangle GAUGE-WIDTH GAUGE-HEIGHT "outline" "balck")
-                        0
-                        1
-                        (place-image (BAR ws) 60 (- 120 (/ ws 2)) WORLD)))
+(define (draw-guage height)
+  (overlay/align/offset
+   "middle" "bottom"
+   (rectangle GAUGE-WIDTH height "solid" "red")
+   0 1
+   (overlay/align/offset
+    "middle" "bottom"
+    FRAME
+    0 1
+    SCENE)))
 
-(define (H-up ws)
+(define (draw-guage-horz width)         ; Example
+  (overlay/align/offset
+   "left" "middle"
+   (rectangle 103 13 "outline" "black")
+   1 0
+   (rectangle width (/ MAX-HAPPY 10) "solid" "red")))
+
+;; WorldState -> Boolean
+(define (end? ws)
+  (= ws 0))
+
+;; WorldState -> WorldState
+(define (tick-handler ws)
   (cond
-    [(< ws 100) (+ ws (* ws (/ 1.0 3.0)))]
-    [else 100]))
+    [(> ws MAX-HAPPY) MAX-HAPPY]
+    [(<= ws SCORE-DECREASE) MIN-HAPPY]
+    [else (- ws SCORE-DECREASE)]))
 
-(define (just-stop ws)
-  (or (negative? ws) (= ws 100)))
-
-(define (H-down ws)
+;; WorldState -> WorldState
+(define (key-handler ws key)
   (cond
-    [(< ws 100) (+ ws (* ws (/ 1.0 5.0)))]
-    [else 100]))
+    [(key=? key "up") (increase-score ws SCORE-BOOST)]
+    [(key=? key "down") (increase-score ws SCORE-INCREASE)]))
 
-(define (change ws key)
-  (cond
-    [(key=? key "up") (H-up ws)]
-    [(key=? key "down") (H-down ws)]))
+(define (increase-score ws addby)
+  (if (> (+ (/ ws addby) ws) MAX-HAPPY)
+      MAX-HAPPY
+      (+ (/ ws addby) ws)))
 
 (define (gauge-prog ws)
   (big-bang ws
             [to-draw render]
-            [on-tick tock]
-            [stop-when just-stop]
-            [on-key change]))
+            [on-tick tick-handler]
+            [stop-when end?]
+            [on-key key-handler]))
+
+;; Run
+(gauge-prog 50)
 
