@@ -23,3 +23,6 @@
 
 (define (cat-prog ws)
   (big-bang ws [to-draw render] [on-tick calc-x 1]))
+
+(define sstring "hello world")
+(substring sstring 7)
