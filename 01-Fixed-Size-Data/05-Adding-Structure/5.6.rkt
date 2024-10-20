@@ -28,4 +28,3 @@
 ;; interpretation (make-vel dx dy) means a velocity of
 ;; dx pixels [per tick] along the horizontal and
 ;; dy pixels [per tick] along the vertical direction
-
