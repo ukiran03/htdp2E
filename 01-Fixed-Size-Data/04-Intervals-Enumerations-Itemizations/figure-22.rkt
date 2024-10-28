@@ -79,6 +79,7 @@
   (+ pos 3))
 
 ;; Worldstate -> Worldstate
+;; Usage: (descend-ufo 50)
 (define (descend-ufo pos)
   (big-bang pos
             [on-tick nxt]
