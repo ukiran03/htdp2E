@@ -2,14 +2,6 @@
 https://github.com/greghendershott/racket-mode/issues/125#issue-68735629
 
 
-#+begin_quote
-Everyone can design programs
-everyone can experience ths satisfaction that comes with creative design
-
-program design--but "Not Programming"--deserves the same role in a
-liberal arts education as mathematics and language skills.
-#+end_quote
-
 * Systematic Program Design:: ~The Basic steps of a function design recipe~
 1. =From Problem Analysis to Data Definitions=
    * Identify the information that must be represented and how it is
@@ -32,3 +24,55 @@ liberal arts education as mathematics and language skills.
      examples in that they help others read and understand the
      definition when the need arises--and it will arise for any
      serious program
+
+* Inspiration
+ DATE: <2024-10-28 Mon>
+ The preface of the book has been my motivation when I feel struck
+ somewhere, so I'm keeping it
+
+** Preface
+Many professions require some form of programming. Accountants program
+spreadsheets; musicians program synthesizers; authors program word
+processors; and web designers program style sheets. When we wrote
+these words for the first edition of the book (1995-2000), readers may
+have considered them futuristic; by now, programming has become a
+required skill and numerous outlets--books, on line courses, K-12
+cirricula--cater to this need, always with the goal of enhancing
+people's job prospects.
+
+The typical course on programming teaches a "tinker until it works"
+approach. When it works. students exclaim "it works!" and move on.
+Sadly, this phrase is also the shortest lie in computing, and it has
+cost many people many hours of their lives. In contrast, the book
+focuses on habits of good programming, addressing both professional
+and vocational programmers.
+
+By "good programming," we mean an approch to the creation of software
+that relies on systematic thought, planning, and understanding from
+the very beginning, at every stage, and for every step. To emphasize
+the point, we speak of systematic program design and systematically
+designed programs. Critically, the latter articulates the rationale of
+the desired functionality. Good programming also satisfies an
+aesthetic sense of accomplishment; the elegance of a good program is
+comparable to time-tested poems or the black-and-white photographs of
+a bygone era. In short, programming differs from good programming like
+crayon sketches in a diner from oil paintings in a museum.
+
+No, this book won't turn anyone into a master painter. But, we would
+not have spent fifteen years writing this edition if we didn't believe
+that
+
+#+begin_quote
+Everyone can design programs
+Everyone can experience ths satisfaction that comes with creative design
+
+Program Design--but =not programming=--deserves the same role in a
+liberal arts education as mathematics and language skills.
+#+end_quote
+
+A student of design who never touches a program again will still pick
+up universally useful problem-solving skills, experience a deeply
+creative activity, and learn to appreciate a new form of aesthetic.
+The rest of this preface explains in detail what we mean with
+"systematic design," who benefits in what manner, and how we go about
+teaching it all.

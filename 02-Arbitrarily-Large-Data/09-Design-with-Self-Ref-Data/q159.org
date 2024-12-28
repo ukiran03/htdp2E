@@ -1,0 +1,5 @@
+read ex-153 and ex-159
+
+=Desired func= -> =Desire output=
+(make-posn 2 3) -> (make-posn 2 0) (make-posn 2 1) (make-posn 2 1) (make-posn 2 2) (make-posn 2 3)
+3 -> 0 1 2 3

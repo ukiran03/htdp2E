@@ -49,7 +49,7 @@
 ;; Functions
 
 ;; VCham -> VCham
-;; Usage : (happy-cham (make-vCham 0 WHITE 100))
+;; Usage : (happy-cham (make-vCham 0 100))
 (define (happy-cham cham)
   (big-bang cham
             [to-draw render]

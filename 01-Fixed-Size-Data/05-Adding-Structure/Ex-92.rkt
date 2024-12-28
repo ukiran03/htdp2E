@@ -40,8 +40,8 @@
 
 (define SCORE-MAX 100)
 (define SCORE-MIN 0)
-(define SCORE-DECREASE 0.1)             ; Defualt decrease
-(define SCORE-FEED 2)                   ; the 5th part of the gauge
+(define SCORE-DECREASE 0.1)
+(define SCORE-FEED 2)
 (define GAUGE-HEIGHT 10)
 
 ;; Frame of the Gauge
